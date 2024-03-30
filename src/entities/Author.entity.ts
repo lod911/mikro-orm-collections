@@ -6,10 +6,10 @@ import { Book } from './Book.entity.js';
 export class Author extends Basis {
 
   @Property()
-  name: string;
+  name!: string;
 
   @Property()
-  email: string;
+  email!: string;
 
   @Property({ nullable: true })
   age?: number;
@@ -26,10 +26,10 @@ export class Author extends Basis {
   @ManyToOne(() => Book, { nullable: true })
   favouriteBook?: Book;
 
-  constructor(name: string, email: string) {
+  constructor() {
     super('Author');
-    this.name = name
-    this.email = email
+    // this.name = name
+    // this.email = email
   }
 
 }

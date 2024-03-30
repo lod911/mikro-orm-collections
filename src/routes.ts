@@ -17,10 +17,11 @@ export async function setRoute(
   fastify.get(
     '/test',
     async function (request: FastifyRequest, reply: FastifyReply) {
-      const { db } = request;
+      const { db } = request;  
+      
 
       const book: any = {
-        title: "test",
+        title: 'Test2',
         author: {
           name: 'Test',
           email: 'mail@mail.com',

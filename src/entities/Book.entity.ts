@@ -6,10 +6,10 @@ import { Basis } from './basis.entity.js';
 export class Book extends Basis {
 
   @Property()
-  title: string;
+  title!: string;
 
   @ManyToOne(() => Author)
-  author: Rel<Author>;
+  author!: Rel<Author>;
 
   @Property({ nullable: true })
   metaObject?: object;
@@ -20,10 +20,8 @@ export class Book extends Basis {
   @Property({ nullable: true })
   metaArrayOfStrings?: string[];
 
-  constructor(title: string, author: Rel<Author>) {
+  constructor() {
     super('Book');
-    this.title = title;
-    this.author = rel(Author, author)
   }
 
 }
